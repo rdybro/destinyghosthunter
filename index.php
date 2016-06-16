@@ -146,16 +146,16 @@
 		<!-- Main Container -->
 		<div id="page-container" class="container">
 		
-			<div class="row">
-				<?php if($_COOKIE['dgh3_cookie_consent'] != '1') { ?>
+			<?php if($_COOKIE['dgh3_cookie_consent'] != '1') { ?>
+				<div class="row">
 					<div class="col-md-12">
 						<div class="alert alert-info alert-dismissible alert-margin" role="alert">
 							<button id="cookie-consent-close" type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 							<strong>This site use cookies</strong> to enhance the user experience. Please leave the site if you won't accept, or close this dialog to hide it.
 						</div>
 					</div>
-				<?php } ?>
-			</div>
+				</div>
+			<?php } ?>
 			
 			<?php echo $usrSet; ?>
 			<?php include('assets/cnt/' . $curPage . '.php'); ?>			

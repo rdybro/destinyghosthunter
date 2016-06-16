@@ -1,0 +1,9 @@
+/backup/*
+/get/*
+/guide/*
+/hidden/*
+analyticstracking.php
+apikey.php
+functions.php
+mariadb.php
+paypal.php

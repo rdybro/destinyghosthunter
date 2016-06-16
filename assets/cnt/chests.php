@@ -81,7 +81,7 @@
 						
 		?>
 		
-						<a href="<?php echo "/" .  $curPlatform. "/" . $curDisplayNameUrl . "/chests/" . strtolower($location) . "/"; ?>" class="list-group-item"><?php echo $location; ?><span class="badge pull-right"><?php echo $array[goldenChestsCount]; ?> / 5</span></a>
+						<a href="<?php echo "/" .  $curPlatform. "/" . $curDisplayNameUrl . "/chests/" . strtolower($location) . "/"; ?>" class="list-group-item<?php if(strtolower($location) == $curLocation){ echo " list-group-item-info"; } ?>"><?php echo $location; ?><span class="badge pull-right"><?php echo $array[goldenChestsCount]; ?> / 5</span></a>
 		
 		<?php
 		

@@ -175,6 +175,7 @@
 							<div id="<?php echo $row[cardId]; ?>" class="<?php echo $varAcquired_panel_collapse; ?> panel-collapse collapse <?php echo $varAcquired_collapse_in; ?>">
 								<div class="panel-body panel-body-top">
 									<a class="btn btn-default pull-right fancybox-guide-lore" href="/lore/<?php echo $row[cardId]; ?>" role="button" data-fancybox-type="iframe">Lore</a>
+									<a class="btn btn-info pull-right fancybox-guide-lore btn-guide-vid" href="/report/<?php echo $row[cardId]; ?>" role="button" data-fancybox-type="iframe">Report</a>
 									<?php if($row[def_video] != "") { ?>
 										<a class="btn btn-danger pull-right fancybox-guide-vid btn-guide-vid" href="http://www.youtube.com/embed/<?php echo $row[def_video]; ?>?rel=0&autoplay=1" role="button">YouTube</a>
 									<?php } ?>

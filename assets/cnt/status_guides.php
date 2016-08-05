@@ -14,21 +14,23 @@
 
 	<div class="col-md-3">
 		<ul class="list-group">
-			<li class="list-group-item active">For Review</li>
 			
 			<?php
 			
 				$db_query = "SELECT cardId,def_status FROM grimoireCards WHERE (def_status='new' OR def_status='review')";
 				$db_array = mysqli_query($db_connection, $db_query);
 				
+				echo "<li class='list-group-item active'><span class='badge'>" . mysqli_num_rows($db_array) . "</span>For Review</li>";
+				
 				while($row = mysqli_fetch_assoc($db_array)) {
-					echo "<li class='list-group-item'>" . $row[cardId];
+					echo "<a class='list-group-item fancybox-guide-lore' href='/report/" . $row[cardId] . "' data-fancybox-type='iframe'>" . $row[cardId];
 					
 					if($row[def_status] == "new") {
 						echo "<span class='badge'>new</span>";
 					}
 					
-					echo "</li>";
+					echo "</a>";
+					
 				}
 			
 			?>
@@ -38,21 +40,22 @@
 	
 	<div class="col-md-3">
 		<ul class="list-group">
-			<li class="list-group-item active">Dead Ghosts</li>
 			
 			<?php
 			
 				$db_query = "SELECT cardId,def_status FROM grimoireCards WHERE (def_status='no' OR def_status='in_progress') AND (def_type='Dead Ghost' OR def_type='Mystery')";
 				$db_array = mysqli_query($db_connection, $db_query);
 				
+				echo "<li class='list-group-item active'><span class='badge'>" . mysqli_num_rows($db_array) . "</span>Dead Ghosts</li>";
+				
 				while($row = mysqli_fetch_assoc($db_array)) {
-					echo "<li class='list-group-item'>" . $row[cardId];
+					echo "<a class='list-group-item fancybox-guide-lore' href='/report/" . $row[cardId] . "' data-fancybox-type='iframe'>" . $row[cardId];
 					
 					if($row[def_status] == "in_progress") {
 						echo "<span class='badge'>in progress</span>";
 					}
 					
-					echo "</li>";
+					echo "</a>";
 				}
 			
 			?>
@@ -62,21 +65,22 @@
 	
 	<div class="col-md-3">
 		<ul class="list-group">
-			<li class="list-group-item active">Calcified Fragments</li>
 			
 			<?php
 			
 				$db_query = "SELECT cardId,def_status FROM grimoireCards WHERE (def_status='no' OR def_status='in_progress') AND def_type='Calcified Fragment'";
 				$db_array = mysqli_query($db_connection, $db_query);
 				
+				echo "<li class='list-group-item active'><span class='badge'>" . mysqli_num_rows($db_array) . "</span>Calcified Fragments</li>";
+				
 				while($row = mysqli_fetch_assoc($db_array)) {
-					echo "<li class='list-group-item'>" . $row[cardId];
+					echo "<a class='list-group-item fancybox-guide-lore' href='/report/" . $row[cardId] . "' data-fancybox-type='iframe'>" . $row[cardId];
 					
 					if($row[def_status] == "in_progress") {
 						echo "<span class='badge'>in progress</span>";
 					}
 					
-					echo "</li>";
+					echo "</a>";
 				}
 			
 			?>
@@ -86,25 +90,25 @@
 	
 	<div class="col-md-3">
 		<ul class="list-group">
-			<li class="list-group-item active">Others</li>
-			<li class='list-group-item'>Here will come an incredible long list of Grimoire cards missing a guide.</li>
 			
-			<?php /*
+			<?php
 			
 				$db_query = "SELECT cardId,def_status FROM grimoireCards WHERE (def_status='no' OR def_status='in_progress') AND def_type<>'Dead Ghost' AND def_type<>'Mystery' AND def_type<>'Calcified Fragment'";
 				$db_array = mysqli_query($db_connection, $db_query);
 				
+				echo "<li class='list-group-item active'><span class='badge'>" . mysqli_num_rows($db_array) . "</span>Others</li>";
+				
 				while($row = mysqli_fetch_assoc($db_array)) {
-					echo "<li class='list-group-item'>" . $row[cardId];
+					echo "<a class='list-group-item fancybox-guide-lore' href='/report/" . $row[cardId] . "' data-fancybox-type='iframe'>" . $row[cardId];
 					
 					if($row[def_status] == "in_progress") {
 						echo "<span class='badge'>in progress</span>";
 					}
 					
-					echo "</li>";
+					echo "</a>";
 				}
 			
-			*/ ?>
+			?>
 			
 		</ul>
 	</div>

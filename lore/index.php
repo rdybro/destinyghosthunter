@@ -45,7 +45,7 @@
 						echo "<p>" . $row[cardDescription] . "</p>";
 					}
 				} else {
-					echo "<p><strong>Sorry!</strong> I couldn't find any lore for this ghost.</p>";
+					echo "<p><strong>Sorry!</strong> I couldn't find any lore for this Grimoire card.</p>";
 				}
 			}
 		

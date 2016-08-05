@@ -53,6 +53,10 @@ ul.about-contact li i {
 	margin: 5px 10px 5px 0;
 }
 
+div.no-padding {
+	padding: 0px;
+}
+
 div.no-bottom-padding {
 	padding-bottom: 0px;
 }

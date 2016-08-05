@@ -17,7 +17,24 @@
 			<?php if($userNotSet != 1) { ?>
 			
 				<ul class="nav navbar-nav">
-					<?php /* <li <?php if($curPage == "grimoire") { echo "class='active'"; } ?>><a href="/<?php echo $curPlatform; ?>/<?php echo $curDisplayNameUrl; ?>/grimoire/missing/">Grimoire</a></li> */ ?>
+					<li class="dropdown<?php if($curPage == "grimoire") { echo " active"; } ?>">
+						<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Grimoire <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+						
+							<?php
+							
+								foreach($grimoireCategoryArray as $grimoireCategory) {
+									echo "<li><a href='/" . $curPlatform . "/" . $curDisplayNameUrl . "/grimoire/" . strtolower($grimoireCategory) . "/'>" . str_replace("-"," ",$grimoireCategory) . "</a></li>";
+									
+									if($grimoireCategory == "Others" OR $grimoireCategory == "Fallen-Hunted" OR $grimoireCategory == "The-Taken-King") {
+										echo "<li class='divider'></li>";
+									}
+								}
+							
+							?>
+						
+						</ul>
+					</li>
 					<li class="dropdown<?php if($curPage == "ghosts") { echo " active"; } ?>">
 						<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Ghosts <span class="caret"></span></a>
 						<ul class="dropdown-menu" role="menu">
@@ -60,7 +77,7 @@
 			<form class="navbar-form navbar-right" action="" method="post">
 				<div class="form-group">
 					<div class="input-group">
-						<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
+						<span class="input-group-addon"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
 						<input type="text" name="displayName" class="form-control" placeholder="Guardian">
 					</div>
 				</div>

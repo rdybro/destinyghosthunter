@@ -1,8 +1,8 @@
 <?php
 
 	error_reporting(0); //E_ALL
-	include('functions.php'); # Includes the file where I define some functions
-	include('mariadb.php'); # Includes the file where I define the database connection
+	include_once('functions.php'); # Includes the file where I define some functions
+	include_once('mariadb.php'); # Includes the file where I define the database connection
 	
 	$getPath = preg_replace("'/'", "", $_SERVER['REQUEST_URI'], 1);
 	$curPath = explode("/", $getPath);
@@ -58,8 +58,8 @@
 		setUserCookies($searchPlatform,$searchDisplayName,$searchId);
 	} elseif(($curPath[0] == "psn" OR $curPath[0] == "xbl") AND ($curPath[2] == "" OR $curPath[2] == "grimoire" OR $curPath[2] == "ghosts" OR $curPath[2] == "fragments" OR $curPath[2] == "chests" OR $curPath[2] == "status")) {
 		if($curPath[2] == "") {
-			$curPage = "ghosts"; //$curPage = "grimoire";
-			$curLocation = "tower"; //$curLocation = "missing";
+			$curPage = "ghosts";
+			$curLocation = "tower";
 			$grimoireStatus = getGrimoireStatus($curMembershipId, $curPlatform);
 		} elseif($curPath[2] == "chests") {
 			$curPage = strtolower($curPath[2]);
@@ -85,6 +85,13 @@
 		"Moon" => array(ghostCount => 0, ghostCollected => 0, grimoireScore => 0, grimoireCollected => 0, goldenChests => 1, goldenChestsCount => 0),
 		"Venus" => array(ghostCount => 0, ghostCollected => 0, grimoireScore => 0, grimoireCollected => 0, goldenChests => 1, goldenChestsCount => 0),
 		"Mars" => array(ghostCount => 0, ghostCollected => 0, grimoireScore => 0, grimoireCollected => 0, goldenChests => 1, goldenChestsCount => 0)
+	);
+	
+	$grimoireCategoryArray = array(
+		"Guardian", "Inventory", "Exotic-Weapons", "Allies", "Places", "Others",
+		"Fallen", "Hive", "Vex", "Cabal", "The-Taken", "Fallen-Hunted",
+		"Story", "Strikes", "The-Taken-King",
+		"Crucible-Playlists", "Crucible-Arenas"
 	);
 	
 	if($curLocation == "tower") { $subtitle = "in the Tower"; }

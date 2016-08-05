@@ -4,6 +4,7 @@
 		<footer>
 			<div class="pull-right"><?php include('paypal.php'); ?></div>
 			<p>
+				<a href="https://github.com/rdybro/destinyghosthunter" target="_blank">GitHub</a> | 
 				<a href="https://www.reddit.com/u/rasmusdybro/" target="_blank">Reddit</a> | 
 				<a href="https://twitter.com/rdybro" target="_blank">Twitter</a> | 
 				<a href="https://www.youtube.com/channel/UCFbTxs3NltVan8ToAF0WPlA" target="_blank">YouTube</a> | 
